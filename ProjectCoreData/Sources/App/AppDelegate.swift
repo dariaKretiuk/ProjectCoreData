@@ -11,25 +11,62 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
+    
+    // MARK: - Elements
+    
+    private let appearance: UINavigationBarAppearance =  {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .f5cac5
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        return appearance
+    }()
+    
+    private let appearanceTabBar: UITabBarAppearance =  {
+        let appearanceTabBar = UITabBarAppearance()
+        appearanceTabBar.configureWithOpaqueBackground()
+        appearanceTabBar.backgroundColor = .f5cac5
+        return appearanceTabBar
+    }()
+    
+    // MARK: - Private func
+    
+    private func settingsBar() {
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        
+        UITabBar.appearance().standardAppearance = appearanceTabBar
+        UITabBar.appearance().scrollEdgeAppearance = appearanceTabBar
+        UITabBar.appearance().tintColor = .ff585b
+    }
+    
+    // MARK: - Main func
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        settingsBar()
+        
+        let tabBarController = UITabBarController()
+        
+        let firstWindowController = FirstWindowController()
+        let firstWindowNavigationController = UINavigationController(rootViewController: firstWindowController)
+        firstWindowController.tabBarItem = UITabBarItem(title: "Первый экран", image: UIImage(systemName: "1.circle"), tag: 0)
+        
+        let secondWindowController = UIViewController()
+        let secondWindowNavigationController = UINavigationController(rootViewController: secondWindowController)
+        secondWindowController.tabBarItem = UITabBarItem(title: "Второй экран", image: UIImage(systemName: "2.circle"), tag: 1)
+        
+        tabBarController.setViewControllers([
+            firstWindowNavigationController,
+            secondWindowNavigationController
+        ], animated: true)
+        tabBarController.selectedIndex = 0
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+        
         return true
-    }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
     // MARK: - Core Data stack
