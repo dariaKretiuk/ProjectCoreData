@@ -13,6 +13,12 @@
 		FFBB37F228572632008D58DF /* ProjectCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFBB37F028572632008D58DF /* ProjectCoreData.xcdatamodeld */; };
 		FFBB37F428572635008D58DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFBB37F328572635008D58DF /* Assets.xcassets */; };
 		FFBB37F728572635008D58DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBB37F528572635008D58DF /* LaunchScreen.storyboard */; };
+		FFBB3807285728A9008D58DF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB3806285728A9008D58DF /* UIColor+Extension.swift */; };
+		FFBB380F28572A24008D58DF /* FirstWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB380E28572A24008D58DF /* FirstWindowController.swift */; };
+		FFBB381128572C18008D58DF /* FirstWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB381028572C18008D58DF /* FirstWindowView.swift */; };
+		FFBB381428572C65008D58DF /* WindowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB381328572C65008D58DF /* WindowDelegate.swift */; };
+		FFBB381628573048008D58DF /* FirstWindowTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB381528573048008D58DF /* FirstWindowTableCell.swift */; };
+		FFBB381828573A7C008D58DF /* FirstWindowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB381728573A7C008D58DF /* FirstWindowModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		FFBB37F328572635008D58DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFBB37F628572635008D58DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFBB37F828572635008D58DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFBB3806285728A9008D58DF /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		FFBB380E28572A24008D58DF /* FirstWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWindowController.swift; sourceTree = "<group>"; };
+		FFBB381028572C18008D58DF /* FirstWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWindowView.swift; sourceTree = "<group>"; };
+		FFBB381328572C65008D58DF /* WindowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowDelegate.swift; sourceTree = "<group>"; };
+		FFBB381528573048008D58DF /* FirstWindowTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWindowTableCell.swift; sourceTree = "<group>"; };
+		FFBB381728573A7C008D58DF /* FirstWindowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWindowModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +77,8 @@
 		FFBB37FE2857263B008D58DF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				FFBB38012857264E008D58DF /* Scene */,
 				FFBB38002857264A008D58DF /* App */,
+				FFBB38012857264E008D58DF /* Scene */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -93,6 +105,11 @@
 		FFBB38012857264E008D58DF /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FFBB381228572C52008D58DF /* Delegate */,
+				FFBB380A285729F1008D58DF /* Model */,
+				FFBB3809285729ED008D58DF /* View */,
+				FFBB3808285729DC008D58DF /* Controller */,
+				FFBB380528572897008D58DF /* Extension */,
 				FFBB37EB28572632008D58DF /* ViewController.swift */,
 			);
 			path = Scene;
@@ -121,6 +138,71 @@
 				FFBB37F028572632008D58DF /* ProjectCoreData.xcdatamodeld */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		FFBB380528572897008D58DF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FFBB3806285728A9008D58DF /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FFBB3808285729DC008D58DF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FFBB380B285729F6008D58DF /* FirstWindowController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FFBB3809285729ED008D58DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFBB380C285729FC008D58DF /* FirstWindowView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FFBB380A285729F1008D58DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFBB380D28572A11008D58DF /* FirstWindowModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FFBB380B285729F6008D58DF /* FirstWindowController */ = {
+			isa = PBXGroup;
+			children = (
+				FFBB380E28572A24008D58DF /* FirstWindowController.swift */,
+			);
+			path = FirstWindowController;
+			sourceTree = "<group>";
+		};
+		FFBB380C285729FC008D58DF /* FirstWindowView */ = {
+			isa = PBXGroup;
+			children = (
+				FFBB381028572C18008D58DF /* FirstWindowView.swift */,
+				FFBB381528573048008D58DF /* FirstWindowTableCell.swift */,
+			);
+			path = FirstWindowView;
+			sourceTree = "<group>";
+		};
+		FFBB380D28572A11008D58DF /* FirstWindowModel */ = {
+			isa = PBXGroup;
+			children = (
+				FFBB381728573A7C008D58DF /* FirstWindowModel.swift */,
+			);
+			path = FirstWindowModel;
+			sourceTree = "<group>";
+		};
+		FFBB381228572C52008D58DF /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FFBB381328572C65008D58DF /* WindowDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,7 +278,13 @@
 			files = (
 				FFBB37EC28572632008D58DF /* ViewController.swift in Sources */,
 				FFBB37E828572632008D58DF /* AppDelegate.swift in Sources */,
+				FFBB381828573A7C008D58DF /* FirstWindowModel.swift in Sources */,
+				FFBB381428572C65008D58DF /* WindowDelegate.swift in Sources */,
 				FFBB37F228572632008D58DF /* ProjectCoreData.xcdatamodeld in Sources */,
+				FFBB3807285728A9008D58DF /* UIColor+Extension.swift in Sources */,
+				FFBB381628573048008D58DF /* FirstWindowTableCell.swift in Sources */,
+				FFBB380F28572A24008D58DF /* FirstWindowController.swift in Sources */,
+				FFBB381128572C18008D58DF /* FirstWindowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
