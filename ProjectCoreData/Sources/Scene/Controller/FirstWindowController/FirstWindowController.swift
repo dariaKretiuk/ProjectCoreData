@@ -22,7 +22,6 @@ class FirstWindowController: UIViewController {
         view = firstView
         firstView.delegate = self
         model = FirstWindowModel()
-        
         configureView()
         setupView()
     }
@@ -36,6 +35,7 @@ class FirstWindowController: UIViewController {
 // MARK: - Configurations
 
 private extension FirstWindowController {
+    
     func configureView() {
         guard let models = model?.createModels() else { return }
         firstWindowView?.configureView(with: models)
@@ -45,9 +45,6 @@ private extension FirstWindowController {
 // MARK: - Delegate
 
 extension FirstWindowController: FirstWindowDelegate {
-    func addData(textLabel: String) {
-        print("add: \(textLabel)")
-    }
     
     func addDataModel(textLabel: String) {
         firstWindowView?.configureView(with: self.model?.addObject(textLabel: textLabel) ?? [])

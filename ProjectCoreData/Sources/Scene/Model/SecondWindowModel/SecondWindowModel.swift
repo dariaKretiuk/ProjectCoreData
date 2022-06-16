@@ -1,26 +1,20 @@
-//
-//  SecondWindowModel.swift
-//  ProjectCoreData
-//
-//  Created by Дарья Кретюк on 14.06.2022.
-//
-
 import Foundation
 import CoreData
 
 class SecondWindowModel {
     
+    // MARK: - Elements
+    
     private var model = [SecondWindow]()
     
-    // Singleton
+    // MARK: - Singleton
+    
     static let instance = SecondWindowModel()
     
-    // Entity for Name
     func entityForName(entityName: String) -> NSEntityDescription {
         return NSEntityDescription.entity(forEntityName: entityName, in: self.managedObjectContext)!
     }
 
-    // Fetched Results Controller for Entity Name
     func fetchedResultsController(entityName: String, keyForSort: String) -> NSFetchedResultsController<NSFetchRequestResult> {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
@@ -80,7 +74,7 @@ class SecondWindowModel {
         return managedObjectContext
     }()
     
-    // MARK: - Core Data Saving support
+    // MARK: - Core Data Saving/Add support
     
     func saveContext () {
         if managedObjectContext.hasChanges {
@@ -112,6 +106,8 @@ class SecondWindowModel {
         """)
         return model
     }
+    
+    // MARK: - Create models
     
     func createModels() -> [SecondWindow] {
         return self.model

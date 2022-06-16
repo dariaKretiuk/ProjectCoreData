@@ -117,6 +117,8 @@ class FirstWindowView: UIView {
     }
 }
 
+// MARK: - Table Data Source
+
 extension FirstWindowView: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -137,6 +139,8 @@ extension FirstWindowView: UITableViewDataSource {
     }
 }
 
+// MARK: - Table Delegate
+
 extension FirstWindowView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -155,17 +159,6 @@ extension FirstWindowView: UITableViewDelegate {
         let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
 
         return swipeActions
-        
-        
-//        let delete = UITableViewRowAction(style: .destructive, title: "Удалить") {
-//            (action, indexPath) in
-//            self.delegate?.deleteObjectModel(indexObject: indexPath.row)
-//            self.tableView.reloadData()
-//        }
-//
-//        delete.backgroundColor = UIColor.red
-//
-//        return [delete]
     }
 }
 

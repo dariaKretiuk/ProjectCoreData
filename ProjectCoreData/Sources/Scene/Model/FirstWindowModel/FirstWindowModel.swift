@@ -3,17 +3,18 @@ import CoreData
 
 class FirstWindowModel {
     
+    // MARK: - Elements
+    
     private var model = [FirstWindow]()
     
-    // Singleton
+    // MARK: - Singleton
+    
     static let instance = FirstWindowModel()
     
-    // Entity for Name
     func entityForName(entityName: String) -> NSEntityDescription {
         return NSEntityDescription.entity(forEntityName: entityName, in: self.managedObjectContext)!
     }
 
-    // Fetched Results Controller for Entity Name
     func fetchedResultsController(entityName: String, keyForSort: String) -> NSFetchedResultsController<NSFetchRequestResult> {
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
@@ -73,7 +74,7 @@ class FirstWindowModel {
         return managedObjectContext
     }()
     
-    // MARK: - Core Data Saving support
+    // MARK: - Core Data Saving/Deleted/Add support
     
     func saveContext () {
         if managedObjectContext.hasChanges {
@@ -102,6 +103,8 @@ class FirstWindowModel {
         saveContext()
         return model
     }
+    
+    // MARK: - Create models
     
     func createModels() -> [FirstWindow] {
         return self.model

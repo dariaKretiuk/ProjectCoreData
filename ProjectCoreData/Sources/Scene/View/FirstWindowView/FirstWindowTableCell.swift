@@ -1,10 +1,3 @@
-//
-//  FirstWindowTableCell.swift
-//  ProjectCoreData
-//
-//  Created by Дарья Кретюк on 13.06.2022.
-//
-
 import Foundation
 import UIKit
 

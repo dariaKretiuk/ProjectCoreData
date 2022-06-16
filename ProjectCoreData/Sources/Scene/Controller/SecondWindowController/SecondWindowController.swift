@@ -39,7 +39,6 @@ class SecondWindowController: UIViewController {
         view = secondView
         secondView.delegate = self
         model = SecondWindowModel()
-        
         configureView()
         setupView()
     }
@@ -66,12 +65,12 @@ class SecondWindowController: UIViewController {
             isTappedUpdate.toggle()
         }
     }
-    
 }
 
 // MARK: - Configurations
 
 private extension SecondWindowController {
+    
     func configureView() {
         guard let models = model?.createModels() else { return }
         secondView.configureView(with: models)
@@ -81,6 +80,7 @@ private extension SecondWindowController {
 // MARK: - Delegate
 
 extension SecondWindowController: SecondWindowDelegate {
+    
     func addObject(object: (name: String, birthday: String, genders: String)) {
         firstWindowView?.configureView(with: self.model?.addObject(object: object) ?? [])
     }

@@ -1,10 +1,3 @@
-//
-//  SecondWindowView.swift
-//  ProjectCoreData
-//
-//  Created by Дарья Кретюк on 14.06.2022.
-//
-
 import Foundation
 import UIKit
 
@@ -17,33 +10,22 @@ class SecondWindowView: UIView {
     
     // MARK: - Elements
     
-    private let bottomLine: CALayer = {
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0, y: 0, width: 700, height: 2)
-        bottomLine.backgroundColor = UIColor(red: 247.0/255.0,
-                                             green: 247.0/255.0,
-                                             blue: 247.0/255.0,
-                                             alpha: 1
-        ).cgColor
-        return bottomLine
-    }()
-    
     private let imageContainer: UIView = {
-        let view = UIView()
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         view.backgroundColor = .clear
         view.contentMode = .center
-        view.layer.cornerRadius = 100
         return view
     }()
     
     private let image: UIImageView = {
-        let img = UIImageView()
+        let img = UIImageView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         img.contentMode = .center
-        img.contentMode = .scaleAspectFit
+        img.contentMode = .scaleAspectFill
         img.image = UIImage(named: "iconSecondWindow")
-        img.layer.cornerRadius = 30
+        img.layer.cornerRadius = 100
         img.translatesAutoresizingMaskIntoConstraints = false
         img.tintColor = .white
+        img.clipsToBounds = true
         return img
     }()
     
@@ -110,7 +92,6 @@ class SecondWindowView: UIView {
         textField.textAlignment = .left
         textField.textColor = .black
         textField.backgroundColor = .clear
-        textField.layer.cornerRadius = 20
         textField.leftView = view
         textField.leftViewMode = .always
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -120,8 +101,7 @@ class SecondWindowView: UIView {
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-//        stackView.spacing = 15
-//        stackView.distribution = .fill
+        stackView.spacing = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -162,32 +142,18 @@ class SecondWindowView: UIView {
     private func setupLayout() {
 
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 100),
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 120),
             stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 100),
-            stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -100),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -200),
-            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            imageContainer.widthAnchor.constraint(equalToConstant: 150),
+            stackView.widthAnchor.constraint(equalToConstant: 200),
+            imageContainer.widthAnchor.constraint(equalToConstant: 200),
             imageContainer.heightAnchor.constraint(equalToConstant: 200),
-            
             image.centerYAnchor.constraint(equalTo: imageContainer.centerYAnchor),
             image.centerXAnchor.constraint(equalTo: imageContainer.centerXAnchor),
-            image.heightAnchor.constraint(equalToConstant: 300),
-            
-            name.topAnchor.constraint(equalTo: image.bottomAnchor),
-            name.widthAnchor.constraint(equalToConstant: 250),
-            name.bottomAnchor.constraint(equalTo: birthday.topAnchor),
-            name.heightAnchor.constraint(equalToConstant: 100),
-            
-            birthday.topAnchor.constraint(equalTo: name.bottomAnchor),
-            birthday.widthAnchor.constraint(equalToConstant: 250),
-            birthday.heightAnchor.constraint(equalToConstant: 100),
-            
-            
-            genders.topAnchor.constraint(equalTo: birthday.bottomAnchor),
-            genders.widthAnchor.constraint(equalToConstant: 250),
-            genders.heightAnchor.constraint(equalToConstant: 100),
+            image.widthAnchor.constraint(equalToConstant: 200),
+            image.heightAnchor.constraint(equalToConstant: 200),
+            name.heightAnchor.constraint(equalToConstant: 40),
+            birthday.heightAnchor.constraint(equalToConstant: 40),
+            genders.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
 
