@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let firstWindowNavigationController = UINavigationController(rootViewController: firstWindowController)
         firstWindowController.tabBarItem = UITabBarItem(title: "Первый экран", image: UIImage(systemName: "1.circle"), tag: 0)
         
-        let secondWindowController = UIViewController()
+        let secondWindowController = SecondWindowController()
         let secondWindowNavigationController = UINavigationController(rootViewController: secondWindowController)
         secondWindowController.tabBarItem = UITabBarItem(title: "Второй экран", image: UIImage(systemName: "2.circle"), tag: 1)
         
@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             firstWindowNavigationController,
             secondWindowNavigationController
         ], animated: true)
-        tabBarController.selectedIndex = 0
+        tabBarController.selectedIndex = 1
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
