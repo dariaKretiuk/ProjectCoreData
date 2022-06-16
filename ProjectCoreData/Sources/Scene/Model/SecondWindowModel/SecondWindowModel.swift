@@ -1,12 +1,19 @@
+//
+//  SecondWindowModel.swift
+//  ProjectCoreData
+//
+//  Created by Дарья Кретюк on 14.06.2022.
+//
+
 import Foundation
 import CoreData
 
-class FirstWindowModel {
+class SecondWindowModel {
     
-    private var model = [FirstWindow]()
+    private var model = [SecondWindow]()
     
     // Singleton
-    static let instance = FirstWindowModel()
+    static let instance = SecondWindowModel()
     
     // Entity for Name
     func entityForName(entityName: String) -> NSEntityDescription {
@@ -20,7 +27,7 @@ class FirstWindowModel {
         let sortDescriptor = NSSortDescriptor(key: keyForSort, ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: FirstWindowModel.instance.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: SecondWindowModel.instance.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         
         return fetchedResultsController
     }
@@ -33,7 +40,7 @@ class FirstWindowModel {
     }()
     
     var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "ProjectCoreData")
+        let container = NSPersistentContainer(name: "DataSecondWindow")
           container.loadPersistentStores(completionHandler: { (storeDescription, error) in
               if let error = error as NSError? {
                   fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -43,13 +50,13 @@ class FirstWindowModel {
     }()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = Bundle.main.url(forResource: "ProjectCoreData", withExtension: "momd")!
+        let modelURL = Bundle.main.url(forResource: "DataSecondWindow", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.appendingPathComponent("ProjectCoreData.sqlite")
+        let url = self.applicationDocumentsDirectory.appendingPathComponent("DataSecondWindow.sqlite")
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
             try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
@@ -87,23 +94,26 @@ class FirstWindowModel {
         }
     }
     
-    func addObject(textLabel: String) -> [FirstWindow] {
-        let managedObjectContext = FirstWindowModel.instance.managedObjectContext
-        let newText = FirstWindow(context: managedObjectContext)
-        newText.setValue(textLabel, forKey: "textLabel")
+    func addObject(object: (name: String, birthday: String, genders: String)) -> [SecondWindow] {
+        let managedObjectContext = SecondWindowModel.instance.managedObjectContext
+        let newText = SecondWindow(context: managedObjectContext)
+        newText.setValue(object.name, forKey: "name")
+        newText.setValue(object.birthday, forKey: "birthday")
+        newText.setValue(object.genders, forKey: "genders")
+        print(" КОЛИЧЕСТВО ЗАПИСЕЙ БЫЛО: \(self.model.count)")
         self.model.insert(newText, at: 0)
         saveContext()
+        print("""
+        КОЛИЧЕСТВО ЗАПИСЕЙ СТАЛО: \(self.model.count)
+        ДОБАВИЛАСЬ ЗАПИСЬ:
+        имя - \(object.name)
+         др - \(object.birthday)
+        пол - \(object.genders)
+        """)
         return model
     }
     
-    func deleteObject(indexObject: Int) -> [FirstWindow] {
-        FirstWindowModel.instance.managedObjectContext.delete(self.model[indexObject])
-        self.model.remove(at: indexObject)
-        saveContext()
-        return model
-    }
-    
-    func createModels() -> [FirstWindow] {
+    func createModels() -> [SecondWindow] {
         return self.model
     }
 }

@@ -14,3 +14,7 @@ protocol FirstWindowDelegate: AnyObject {
     
     func deleteObjectModel(indexObject: Int)
 }
+
+protocol SecondWindowDelegate: AnyObject {
+    func addObject(object: (name: String, birthday: String, genders: String))
+}

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF5A78C6285A253600C06AE5 /* DataSecondWindow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF5A78C4285A253600C06AE5 /* DataSecondWindow.xcdatamodeld */; };
+		FF8BD8062858D3A60054AE50 /* SecondWindowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8BD8052858D3A60054AE50 /* SecondWindowModel.swift */; };
+		FF8BD8082858D3B60054AE50 /* SecondWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8BD8072858D3B60054AE50 /* SecondWindowView.swift */; };
+		FF8BD80A2858D3C10054AE50 /* SecondWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8BD8092858D3C10054AE50 /* SecondWindowController.swift */; };
 		FFBB37E828572632008D58DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB37E728572632008D58DF /* AppDelegate.swift */; };
 		FFBB37EC28572632008D58DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB37EB28572632008D58DF /* ViewController.swift */; };
 		FFBB37EF28572632008D58DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBB37ED28572632008D58DF /* Main.storyboard */; };
@@ -22,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF5A78C5285A253600C06AE5 /* DataSecondWindow.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataSecondWindow.xcdatamodel; sourceTree = "<group>"; };
+		FF8BD8052858D3A60054AE50 /* SecondWindowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWindowModel.swift; sourceTree = "<group>"; };
+		FF8BD8072858D3B60054AE50 /* SecondWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWindowView.swift; sourceTree = "<group>"; };
+		FF8BD8092858D3C10054AE50 /* SecondWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWindowController.swift; sourceTree = "<group>"; };
 		FFBB37E428572632008D58DF /* ProjectCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBB37E728572632008D58DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFBB37EB28572632008D58DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +57,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF8BD8022858D3760054AE50 /* SecondWindowModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF8BD8052858D3A60054AE50 /* SecondWindowModel.swift */,
+			);
+			path = SecondWindowModel;
+			sourceTree = "<group>";
+		};
+		FF8BD8032858D3800054AE50 /* SecondWindowView */ = {
+			isa = PBXGroup;
+			children = (
+				FF8BD8072858D3B60054AE50 /* SecondWindowView.swift */,
+			);
+			path = SecondWindowView;
+			sourceTree = "<group>";
+		};
+		FF8BD8042858D38C0054AE50 /* SecondWindowController */ = {
+			isa = PBXGroup;
+			children = (
+				FF8BD8092858D3C10054AE50 /* SecondWindowController.swift */,
+			);
+			path = SecondWindowController;
+			sourceTree = "<group>";
+		};
 		FFBB37DB28572632008D58DF = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				FFBB37F028572632008D58DF /* ProjectCoreData.xcdatamodeld */,
+				FF5A78C4285A253600C06AE5 /* DataSecondWindow.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -151,6 +184,7 @@
 		FFBB3808285729DC008D58DF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FF8BD8042858D38C0054AE50 /* SecondWindowController */,
 				FFBB380B285729F6008D58DF /* FirstWindowController */,
 			);
 			path = Controller;
@@ -159,6 +193,7 @@
 		FFBB3809285729ED008D58DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FF8BD8032858D3800054AE50 /* SecondWindowView */,
 				FFBB380C285729FC008D58DF /* FirstWindowView */,
 			);
 			path = View;
@@ -167,6 +202,7 @@
 		FFBB380A285729F1008D58DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FF8BD8022858D3760054AE50 /* SecondWindowModel */,
 				FFBB380D28572A11008D58DF /* FirstWindowModel */,
 			);
 			path = Model;
@@ -279,12 +315,16 @@
 				FFBB37EC28572632008D58DF /* ViewController.swift in Sources */,
 				FFBB37E828572632008D58DF /* AppDelegate.swift in Sources */,
 				FFBB381828573A7C008D58DF /* FirstWindowModel.swift in Sources */,
+				FF8BD80A2858D3C10054AE50 /* SecondWindowController.swift in Sources */,
+				FF8BD8082858D3B60054AE50 /* SecondWindowView.swift in Sources */,
+				FF8BD8062858D3A60054AE50 /* SecondWindowModel.swift in Sources */,
 				FFBB381428572C65008D58DF /* WindowDelegate.swift in Sources */,
 				FFBB37F228572632008D58DF /* ProjectCoreData.xcdatamodeld in Sources */,
 				FFBB3807285728A9008D58DF /* UIColor+Extension.swift in Sources */,
 				FFBB381628573048008D58DF /* FirstWindowTableCell.swift in Sources */,
 				FFBB380F28572A24008D58DF /* FirstWindowController.swift in Sources */,
 				FFBB381128572C18008D58DF /* FirstWindowView.swift in Sources */,
+				FF5A78C6285A253600C06AE5 /* DataSecondWindow.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +544,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		FF5A78C4285A253600C06AE5 /* DataSecondWindow.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FF5A78C5285A253600C06AE5 /* DataSecondWindow.xcdatamodel */,
+			);
+			currentVersion = FF5A78C5285A253600C06AE5 /* DataSecondWindow.xcdatamodel */;
+			path = DataSecondWindow.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		FFBB37F028572632008D58DF /* ProjectCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
